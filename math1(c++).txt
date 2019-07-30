@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	long n, temp = 0;
+
+	cout << "Please input the number:" << endl;
+	cin >> n;
+	if (n > 0) {
+		if (n % 2 == 0) {
+			temp = n / 2 * (-1);
+		}
+		else {
+			temp = n / 2 * (-1) + n;
+		}
+		cout << temp;
+	}
+	else {
+		cout << "Error input";
+	}
+	system("PAUSE");
+
+	return 0;
+}
