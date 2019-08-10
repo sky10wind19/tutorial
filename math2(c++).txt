@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+//數字區間是否連續
+
+int main() {
+	int cnt;
+	int min=0 ,max=0;
+
+	cout << "請輸入您想要輸入的數字數目：";
+	cin >> cnt;
+
+	int* ptr = new int (cnt);
+	cout << "請輸入您想判斷的數列：";
+
+	for (int j = 0; j < cnt; j++) {
+		cin >> ptr[j];
+	}
+	min = ptr[0];
+	max = ptr[0];	
+
+	for (int j = 0; j < cnt; j++) {
+		if (ptr[j] > max) {
+			max = ptr[j];
+		}
+		else if (ptr[j] < min) {
+			min = ptr[j];
+		}
+	}
+
+	if (max - min == cnt - 1) {
+		cout << "Yes";
+	}
+	else {
+		cout << "No";
+	}
+
+
+	system("pause");
+	return 0;
+	
+}
