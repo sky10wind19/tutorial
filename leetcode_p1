@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+//Leetcode 題目：數列中任兩不重複的數字相加=目標數
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        for (int i = 0; i < nums.length - 1; i++) {
+            for (int j = i+1; j < nums.length; j++) {
+                if (target == nums[i] + nums[j]) {
+                    System.out.printf("[%d,%d]%n", i, j);
+                    return new int[] { i, j };
+                }
+            }
+        }
+        System.out.println("no result");
+        return new int[] {};
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("請輸入數列的長度: ");
+        int length = scan.nextInt();
+        int[] nums = new int[length];
+
+        System.out.println("請輸入數列: ");
+        for (int i = 0; i < length; i++) {
+            nums[i] = scan.nextInt();
+        }
+
+        System.out.println("請輸入目標數: ");
+        int target = scan.nextInt();
+
+        Solution solution = new Solution();
+        solution.twoSum(nums, target);
+
+        scan.close();
+    }
+}
