@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+//回文數測試
+class Solution1 {
+    public static boolean isPalindrome(int x) {
+        int y = 0;
+        int ans = 0;
+        y = x;
+        if (x < 0 || (x != 0 && x % 10 == 0)) {
+            return false;
+        } 
+        else {
+            while (y >= 1) {
+                ans = ans * 10 + y % 10;
+                y = y / 10;
+            }
+
+            if (ans == x) {
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("請輸入一個整數");
+        int x = scan.nextInt();
+        System.out.println(isPalindrome(x));
+        scan.close();
+    }
+}
